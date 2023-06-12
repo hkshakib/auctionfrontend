@@ -5,6 +5,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import { AuthProvider } from './Context/AuthContext';
 import PrivateRoute from './Layout/PrivateRoute';
+import AddItem from './Pages/AddItem';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route element={<PrivateRoute/>}>
               <Route path='/' element={<Home/>} />
+              <Route path='/add-Item' element={<AddItem/>} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
