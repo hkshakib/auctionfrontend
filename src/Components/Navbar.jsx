@@ -16,7 +16,7 @@ const Navbar = () => {
       
         <li className={styles.Home}>
           <FcHome className={styles.Icons}/>
-          <NavLink to="/" className={styles.homeLink}> Home </NavLink>
+          <NavLink to="/" className={styles.homeLink}> BID BUDDY </NavLink>
         </li>
 
         <div className={styles.navbarItems}>
