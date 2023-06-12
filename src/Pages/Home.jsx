@@ -36,23 +36,34 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <h2>Bidding Products</h2>
+      <h2>HERE YOU GO</h2>
       {biddingProducts.length === 0 ? (
         <p>No products available.</p>
       ) : (
         <div className={styles.productList}>
           {biddingProducts.map((product) => (
             <div key={product.id} className={styles.productItem}>
-              
-              <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} />
-              <h3>{product.title}</h3>
-              <p>{product.description}</p>
-              <div className={styles.bidInfo}>
-                <p>Current Bid: ${product.highest_bid}</p>
-                <p>Ends At: {product.auction_end_date_time}</p>
+        
+              <div className={styles.basicInfo}>
+                <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} />
+                
+                <div className={styles.productDetails}>
+                  <div className={styles.title}>{product.title}</div>
+                  <div className={styles.description}>{product.descriptions}</div>
+                </div>
+
               </div>
-              <button className={styles.viewBtn} onClick={() => handleView(product.id)}>View</button>
-              
+
+              <div className={styles.bidInfo}>
+                  <div className={styles.info}>
+                    <div className={styles.highestBid}>Current Bid: ${product.highest_bid}</div>
+                    <div className={styles.auctionEnd}>Ends At: {product.auction_end_date_time}</div>
+                  </div>
+                  <div className={styles.Button}>
+                    <button className={styles.viewBtn} onClick={() => handleView(product.id)}>View</button>
+                  </div>
+              </div>
+
             </div>
             
           ))}
