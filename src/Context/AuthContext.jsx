@@ -125,6 +125,7 @@ export const AuthProvider =({ children })=>{
       
           if (response.status === 201) {
             console.log("Item added successfully");
+            naviagte('/my-product')
           } else {
             console.log("Error occurred while adding item");
           }
