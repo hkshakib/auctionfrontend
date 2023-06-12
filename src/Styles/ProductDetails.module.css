@@ -60,7 +60,7 @@
     flex-basis: auto;
   }
   
-  input {
+  .bidSection input {
     width: 300px;
     height: 40px;
     padding: 8px;
@@ -71,11 +71,11 @@
     font-size: 14px;
   }
   
-  input::placeholder {
+  .bidSection input::placeholder {
     color: #999;
   }
   
-  input:focus {
+  .bidSection input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px #007bff;

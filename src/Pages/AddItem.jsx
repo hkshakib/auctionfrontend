@@ -47,17 +47,19 @@ const AddItem = () => {
 
   return (
     <div className={styles.container}>
-      <h2>Add Item</h2>
+      <div className={styles.title}>Add Your Item Here</div>
       <form onSubmit={handleSubmit} className={styles.form}>
+
         <div className={styles.formGroup}>
           <label htmlFor="title">Title:</label>
           <input
             type="text"
             id="title"
             name="title"
+            placeholder="Write your title here"
             value={title}
             onChange={handleTitleChange}
-            className={styles.input}
+            className={styles.input1}
           />
         </div>
         <div className={styles.formGroup}>
@@ -65,6 +67,7 @@ const AddItem = () => {
           <textarea
             id="description"
             name="description"
+            placeholder="Write your description here"
             value={description}
             onChange={handleDescriptionChange}
             className={styles.textarea}
@@ -77,8 +80,9 @@ const AddItem = () => {
             id="photo"
             name="photo"
             accept="image/*"
+            placeholder="upload your product photo"
             onChange={handlePhotoChange}
-            className={styles.input}
+            className={styles.input2}
           />
         </div>
         <div className={styles.formGroup}>
@@ -87,9 +91,10 @@ const AddItem = () => {
             type="number"
             id="minBidPrice"
             name="minBidPrice"
+            placeholder="input product minimum bid price"
             value={minBidPrice}
             onChange={handleMinBidPriceChange}
-            className={styles.input}
+            className={styles.input3}
           />
         </div>
         <div className={styles.formGroup}>
@@ -100,12 +105,13 @@ const AddItem = () => {
             name="auctionEndDatetime"
             value={auctionEndDatetime}
             onChange={handleAuctionEndDatetimeChange}
-            className={styles.input}
+            className={styles.input4}
           />
         </div>
         <button type="submit" className={styles.button}>
           Add Item
         </button>
+
       </form>
     </div>
   );
