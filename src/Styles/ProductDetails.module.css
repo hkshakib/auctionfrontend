@@ -1,23 +1,100 @@
+.wrapper {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
 .container {
     display: flex;
-    align-items: center;
+    flex-basis: 100%;
+  }
+
+  .productInformations {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
     margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    grid-gap: 10px;
+    padding: 50px;
+  }
+
+  .basicInfo{
+    display: flex;
+    flex-basis: 60%;
+  }
+
+  .shortInfo {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+  }
+
+  .title {
+    display: flex;
+    flex-basis: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productDescription {
+    display: flex;
+    flex-basis: 80%;
+    margin-top: 100px;
+    padding-right: 200px;
+  }
+
+  .bidInfo {
+    display: flex;
+  }
+
+  .info {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+    text-transform: uppercase;
+  }
+
+  .bidSection {
+    display: flex;
+    flex-basis: auto;
   }
   
+  input {
+    width: 300px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  input::placeholder {
+    color: #999;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff;
+  }
+  
+  
   .productImage {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 400px;
     object-fit: cover;
     margin-right: 20px;
   }
   
   .productTitle {
     font-size: 24px;
-    margin-bottom: 10px;
   }
   
   .productDescription {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .productPrice {
@@ -32,6 +109,7 @@
   .productBidder {
     margin-bottom: 10px;
   }
+
   
   .bidBtn {
     height: 50px;
@@ -49,19 +127,27 @@
     border: 1px solid gray;
   }
 
+  /* table style  */
   .bidsTable {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    margin: 20px 10px 0 10px ;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   .tableTitle {
+    display: flex;
+    justify-content: center;
     font-size: 18px;
     font-weight: bold;
+    padding: 10px;
   }
   
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 50px;
   }
   
   th,

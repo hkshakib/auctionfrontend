@@ -10,6 +10,20 @@ const ProductDetails = () => {
   const [bids, setBids] = useState([]);
   const { email, user } = useContext(AuthContext);
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    };
+    return date.toLocaleTimeString(undefined, options);
+  };
+
+
   useEffect(() => {
     fetchProductDetails();
     fetchBids();
@@ -76,67 +90,69 @@ const ProductDetails = () => {
     setBidPrice(parseInt(event.target.value));
   };
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-    };
-    return date.toLocaleTimeString(undefined, options);
-  };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
+      
       {product ? (
-        <div className={styles.container}>
-            <div>
-              <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} className={styles.productImage} />
-            </div>
-              <div>
-                  <h2 className={styles.productTitle}>{product.title}</h2>
-                  <p className={styles.productDescription}>{product.description}</p>
-                  <p className={styles.productPrice}>Price: ${product.highest_bid}</p>
-                  <p className={styles.productEndsAt}>Ends At: {product.auction_end_date_time}</p>
-                  <p className={styles.productBidder}>Bidder: {product.email}</p>
-                  <div className={styles.bidSection}>
-                  <input
-                    type="number"
-                    value={bidPrice}
-                    onChange={handleBidPriceChange}
-                    className={styles.bidInput}
-                  />
-                  <button className={styles.bidBtn} onClick={handleBid}>
-                    Bid
-                  </button>
-              </div>
-            </div> <br/>
+          <div className={styles.container}>
+
+            <div className={styles.productInformations}>
+                
+                <div className={styles.basicInfo}>
+                    <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} className={styles.productImage} />
+                    <div className={styles.shortInfo}>
+                      <div className={styles.productTitle}>{product.title}</div>
+                      <div className={styles.productDescription}>{product.description}</div>
+                    </div>
+                </div>
+
+                <div className={styles.bidInfo}>
+                    
+                    <div className={styles.info}>
+                      <div className={styles.productPrice}>Price: ${product.highest_bid}</div>
+                      <div className={styles.productEndsAt}>Ends At: {product.auction_end_date_time}</div>
+                      <div className={styles.productBidder}>Bidder: {product.email}</div>
+                    </div>
+
+                    <div className={styles.bidSection}>
+                      <input
+                        type="number"
+                        value={bidPrice}
+                        onChange={handleBidPriceChange}
+                        className={styles.bidInput}
+                      />
+                      <button className={styles.bidBtn} onClick={handleBid}>BID</button>
+                    </div>
+
+                </div>
+            </div> 
+
             {bids.length > 0 && (
+
             <div className={styles.bidsTable}>
-              <h3 className={styles.tableTitle}>Bids:</h3>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Bidder</th>
-                    <th>Bidding Amount</th>
-                    <th>Bid End Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {bids?.map((bid) => (
-                    <tr key={bid.id}>
-                      <td>{bid.email}</td>
-                      <td>{bid.amount}</td>
-                      <td>{formatDate(bid.created_at)}</td>
+                <div className={styles.tableTitle}>BID INFORMATIONS</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Bidder</th>
+                      <th>Bidding Amount</th>
+                      <th>Bid End Date</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {bids?.map((bid) => (
+                      <tr key={bid.id}>
+                        <td>{bid.email}</td>
+                        <td>{bid.amount}</td>
+                        <td>{formatDate(bid.created_at)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
             </div>
-          )}
+
+            )}
           </div>
       ) : (<p>Loading...</p> )}
 
