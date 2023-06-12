@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Home.module.css";
 
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [biddingProducts, setBiddingProducts] = useState([]);
 
@@ -8,7 +10,8 @@ const Home = () => {
     fetchBiddingProducts();
   }, []);
 
-  const fetchBiddingProducts = async () => {
+  const fetchBiddingProducts = async (e) => {
+    
     try {
       const response = await fetch("http://127.0.0.1:8000/auction/api/products/");
       if (response.ok) {
@@ -21,6 +24,15 @@ const Home = () => {
       console.log("Error fetching bidding products:", error);
     }
   };
+
+  console.log(biddingProducts);
+
+  const navigate = useNavigate();
+  const handleView = (param) => {
+    console.log("clicked!");
+    navigate(`/product-details/${param}`);
+  }
+
 
   return (
     <div className={styles.container}>
@@ -39,7 +51,10 @@ const Home = () => {
                 <p>Current Bid: ${product.highest_bid}</p>
                 <p>Ends At: {product.auction_end_date_time}</p>
               </div>
+              <button className={styles.viewBtn} onClick={() => handleView(product.id)}>View</button>
+              
             </div>
+            
           ))}
         </div>
       )}

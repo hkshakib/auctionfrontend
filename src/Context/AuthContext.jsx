@@ -11,6 +11,7 @@ export const AuthProvider =({ children })=>{
     let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null);
     let [loading, setLoading] = useState(true);
+    let [email, setEmail] = useState('')
 
     const naviagte = useNavigate();
 
@@ -31,11 +32,13 @@ export const AuthProvider =({ children })=>{
             setAuthTokens(data);
             setUser(jwt_decode(data.access));
             localStorage.setItem('authTokens', JSON.stringify(data));
+            setEmail(e.target.email.value);
             naviagte('/');
         }else{
             alert('Something went wrong!')
         }
     }
+
 
     let SignupUser = async (e )=> {
         e.preventDefault();
@@ -142,6 +145,7 @@ export const AuthProvider =({ children })=>{
         logoutUser: logoutUser,
         SignupUser: SignupUser,
         addItem: addItem,
+        email: email,
     }
 
 

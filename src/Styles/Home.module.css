@@ -40,3 +40,19 @@
     color: #888;
   }
   
+  .viewBtn {
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    background: #46458C;
+    color: #f9f9f9;
+    border: none;
+  }
+
+  .viewBtn:hover {
+    background: #f9f9f9;
+    color: #000;
+    border: 1px solid gray;
+  }
+
+ 

@@ -4,9 +4,7 @@ import styles from '../Styles/Navbar.module.css';
 import AuthContext from '../Context/AuthContext';
 
 const Navbar = () => {
-
-  const { user, logoutUser } = useContext(AuthContext);
-
+  const { user, logoutUser, email } = useContext(AuthContext);
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbarList}>
@@ -18,6 +16,7 @@ const Navbar = () => {
         {!user && <li> <NavLink to="/signup" className={styles.navbarLink}>Signup</NavLink></li>}
         {user && <li> <NavLink to="/my-product" className={styles.navbarLink}>My Product</NavLink></li>}
         {user && <li onClick={logoutUser} className={styles.navbarLink}>Logout</li>}
+        {user && <li className={styles.navbarLink}>{email}</li>}
       </ul>
     </nav>
   );
