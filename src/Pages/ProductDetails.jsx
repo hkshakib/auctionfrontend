@@ -1,14 +1,18 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import styles from "../Styles/ProductDetails.module.css";
 import AuthContext from '../Context/AuthContext';
+import styles from "../Styles/ProductDetails.module.css";
+
 
 const ProductDetails = () => {
+
+  const { email, user } = useContext(AuthContext);
   const { pk } = useParams();
+
   const [product, setProduct] = useState(null);
   const [bidPrice, setBidPrice] = useState(0);
   const [bids, setBids] = useState([]);
-  const { email, user } = useContext(AuthContext);
+
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -35,7 +39,6 @@ const ProductDetails = () => {
       if (response.ok) {
         const data = await response.json();
         setProduct(data);
-        console.log(data);
       } else {
         console.log("Error fetching product details");
       }
@@ -106,13 +109,12 @@ const ProductDetails = () => {
                       <div className={styles.productDescription}>{product.description}</div>
                     </div>
                 </div>
-
                 <div className={styles.bidInfo}>
                     
                     <div className={styles.info}>
-                      <div className={styles.productPrice}>Price: ${product.highest_bid}</div>
-                      <div className={styles.productEndsAt}>Ends At: {product.auction_end_date_time}</div>
-                      <div className={styles.productBidder}>Bidder: {product.email}</div>
+                      <div className={styles.productPrice}>Highest Bid: ${product.highest_bid}</div>
+                      <div className={styles.productEndsAt}>Bid Ends At: {product.auction_end_date_time}</div>
+                      <div className={styles.productBidder}>Highest Bidder: {product.email}</div>
                     </div>
 
                     <div className={styles.bidSection}>
@@ -126,6 +128,7 @@ const ProductDetails = () => {
                     </div>
 
                 </div>
+
             </div> 
 
             {bids.length > 0 && (

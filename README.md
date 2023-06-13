@@ -26,14 +26,29 @@ After submitting the form, the item is added to the auction gallery for other us
 The My Product page is a personalized section available to authenticated users, displaying the items they have listed for auction.
 Users can view a list of their own auction items, along with relevant details such as current highest bid, auction end time, and status.
 
+# FRONTEND CHALLANGES I FACED
+
+* As an Intermediate level React developer, I have lacking some advanced topic and I'm still learning. I'm suffered a lot about AuthContext provider and private route.
+* A error from private route cause me loss my 4-5 hours. 
+* Typo on fetching API causes me loss a lot of time.
+
 # Technology & Frameworks used
-## FRONTEND
+# FRONTEND
 * React JS
+* React Router Dom
 * CSS
-
-# INSTALLATION
-
 
 
 # Limitation
-### Due to time constraints, the project does not include an admin panel interface at the moment. The focus has been on developing user-facing features and core functionality related to auctions. While there is currently no dedicated section for administrators to manage the platform, future updates may incorporate an admin panel to provide advanced administrative capabilities.
+* Due to time constraints, the project does not include an admin panel interface at the moment. The focus has been on developing user-facing features and core functionality related to auctions. While there is currently no dedicated section for administrators to manage the platform, future updates may incorporate an admin panel to provide advanced administrative capabilities.
+* As for automatically deleting expired bid I have to need to work with Django Celery, I didn't do this at this moment for time.
+* I can't concentrate on Work due to recent electricity problem, as I'm Desktop User and live in village
+
+* I don't know AWS or AZURE, So I have to learn for live the website here.
+
+# FUTURE PLAN
+* I want to add CELERY Task for Expired Bid
+* I want to make more customize and easy UI
+* I want to Add a Admin panel Interface
+* I will transfer all CSS stylling into Tailwind CSS
+* Add Material UI or NEXT.js in future

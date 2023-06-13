@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
-import styles from "../Styles/AddItem.module.css";
 import AuthContext from "../Context/AuthContext";
+import styles from "../Styles/AddItem.module.css";
 
 const AddItem = () => {
   const { user, addItem } = useContext(AuthContext);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [photo, setPhoto] = useState(null);
@@ -41,7 +42,6 @@ const AddItem = () => {
       auction_end_date_time: auctionEndDatetime,
       bidder: user.user_id,
     };
-    console.log("Newwwwww:", newItem.bidder);
     addItem(newItem);
   };
 
@@ -62,6 +62,7 @@ const AddItem = () => {
             className={styles.input1}
           />
         </div>
+
         <div className={styles.formGroup}>
           <label htmlFor="description">Description:</label>
           <textarea
@@ -73,6 +74,7 @@ const AddItem = () => {
             className={styles.textarea}
           ></textarea>
         </div>
+
         <div className={styles.formGroup}>
           <label htmlFor="photo">Photo:</label>
           <input
@@ -85,6 +87,7 @@ const AddItem = () => {
             className={styles.input2}
           />
         </div>
+
         <div className={styles.formGroup}>
           <label htmlFor="minBidPrice">Minimum Bid Price:</label>
           <input
@@ -97,6 +100,7 @@ const AddItem = () => {
             className={styles.input3}
           />
         </div>
+
         <div className={styles.formGroup}>
           <label htmlFor="auctionEndDatetime">Auction End Date and Time:</label>
           <input
@@ -108,6 +112,7 @@ const AddItem = () => {
             className={styles.input4}
           />
         </div>
+        
         <button type="submit" className={styles.button}>
           Add Item
         </button>

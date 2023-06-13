@@ -41,7 +41,7 @@
     display: flex;
     flex-basis: 80%;
     margin-top: 100px;
-    padding-right: 200px;
+    padding-right: 20px;
   }
 
   .bidInfo {
@@ -104,6 +104,7 @@
   
   .productEndsAt {
     margin-bottom: 10px;
+    color: rgb(172, 48, 48);
   }
   
   .productBidder {
@@ -127,7 +128,6 @@
     border: 1px solid gray;
   }
 
-  /* table style  */
   .bidsTable {
     display: flex;
     flex-direction: column;

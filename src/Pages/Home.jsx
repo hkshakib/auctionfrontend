@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styles from "../Styles/Home.module.css";
-
 import { useNavigate } from "react-router-dom";
 
+import styles from "../Styles/Home.module.css";
+
+
 const Home = () => {
+
   const [biddingProducts, setBiddingProducts] = useState([]);
 
   useEffect(() => {
@@ -25,11 +27,9 @@ const Home = () => {
     }
   };
 
-  console.log(biddingProducts);
-
   const navigate = useNavigate();
+
   const handleView = (param) => {
-    console.log("clicked!");
     navigate(`/product-details/${param}`);
   }
 
@@ -42,18 +42,16 @@ const Home = () => {
       ) : (
         <div className={styles.productList}>
           {biddingProducts.map((product) => (
+            
             <div key={product.id} className={styles.productItem}>
-        
               <div className={styles.basicInfo}>
-                <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} />
-                
+                <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} />               
                 <div className={styles.productDetails}>
                   <div className={styles.title}>{product.title}</div>
                   <div className={styles.description}>{product.descriptions}</div>
                 </div>
 
               </div>
-
               <div className={styles.bidInfo}>
                   <div className={styles.info}>
                     <div className={styles.highestBid}>Current Bid: ${product.highest_bid}</div>
@@ -63,7 +61,6 @@ const Home = () => {
                     <button className={styles.viewBtn} onClick={() => handleView(product.id)}>View</button>
                   </div>
               </div>
-
             </div>
             
           ))}

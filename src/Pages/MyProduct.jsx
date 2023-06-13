@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import styles from "../Styles/MyProducts.module.css";
 import AuthContext from "../Context/AuthContext";
+import styles from "../Styles/MyProducts.module.css";
+
 
 const MyProducts = () => {
+
   const { user, authTokens } = useContext(AuthContext);
   const [userProducts, setUserProducts] = useState([]);
 
@@ -36,8 +38,6 @@ const MyProducts = () => {
       console.log("Error fetching user products:", error);
     }
   };
-
-  console.log(userProducts);
 
   return (
     <div className={styles.container}>

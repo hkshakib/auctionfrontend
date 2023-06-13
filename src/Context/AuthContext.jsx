@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 
 const AuthContext = createContext();
@@ -8,6 +8,7 @@ export default AuthContext;
 
 
 export const AuthProvider =({ children })=>{
+
     let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null);
     let [loading, setLoading] = useState(true);
@@ -101,8 +102,6 @@ export const AuthProvider =({ children })=>{
         }
     }
 
-    // Add Item Context
-
     const addItem = async (newItem) => {
         console.log("NewItem :",newItem);
         try {
@@ -135,7 +134,7 @@ export const AuthProvider =({ children })=>{
         } catch (error) {
           console.log("Error occurred while adding item:", error);
         }
-      };
+    };
 
 
     let contextData = {
@@ -147,7 +146,6 @@ export const AuthProvider =({ children })=>{
         addItem: addItem,
         email: email,
     }
-
 
     useEffect(()=> {
 
