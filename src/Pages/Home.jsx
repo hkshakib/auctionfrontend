@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "../Styles/Home.module.css";
+import styles from "../Styles/Pages/Home.module.css";
 
 
 const Home = () => {

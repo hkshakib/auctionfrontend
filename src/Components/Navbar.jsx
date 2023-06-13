@@ -9,7 +9,7 @@ import { CgProfile } from 'react-icons/cg';
 import { RiLogoutCircleRLine, RiLoginCircleLine } from 'react-icons/ri';
 import { VscSignIn } from 'react-icons/vsc';
 
-import styles from '../Styles/Navbar.module.css';
+import styles from '../Styles/Components/Navbar.module.css';
 
 
 

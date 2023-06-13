@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import AuthContext from '../Context/AuthContext';
-import styles from "../Styles/ProductDetails.module.css";
+import styles from "../Styles/Pages/ProductDetails.module.css";
 
 
 const ProductDetails = () => {

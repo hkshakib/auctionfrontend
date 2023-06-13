@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext";
-import styles from "../Styles/AddItem.module.css";
+import styles from "../Styles/Pages/AddItem.module.css";
 
 const AddItem = () => {
   const { user, addItem } = useContext(AuthContext);

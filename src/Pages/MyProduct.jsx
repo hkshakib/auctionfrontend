@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../Context/AuthContext";
-import styles from "../Styles/MyProducts.module.css";
+import styles from "../Styles/Pages/MyProducts.module.css";
 
 
 const MyProducts = () => {

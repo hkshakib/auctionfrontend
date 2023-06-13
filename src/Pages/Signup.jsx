@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../Context/AuthContext';
-import styles from '../Styles/Login.module.css';
+import styles from '../Styles/Pages/Login.module.css';
 
 
 const Signup = () => {
