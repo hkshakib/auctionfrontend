@@ -140,7 +140,7 @@ const ProductDetails = () => {
                     <tr>
                       <th>Bidder</th>
                       <th>Bidding Amount</th>
-                      <th>Bid End Date</th>
+                      <th>Bid created Date</th>
                     </tr>
                   </thead>
                   <tbody>
