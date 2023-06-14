@@ -1,6 +1,6 @@
 # BID BUDDY
 
-BID BUDDY Project is a web application that enables users to participate in auctions for various items. It provides features such as user registration and authentication, an auction gallery to browse available items, the ability to place bids on items, and an admin dashboard for managing auctions and monitoring statistics. The platform also includes time series charts to visualize auction trends over time. It is built using technologies such as React, Django REST framework
+BID BUDDY Project is a web application that enables users to participate in auctions for various items. It provides features such as user registration and authentication, an auction gallery to browse available items, the ability to place bids on items. 
 
 # About The Project
 ## Home Page: 
