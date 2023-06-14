@@ -31,6 +31,7 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProductDetails();
     fetchBids();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchProductDetails = async (e) => {

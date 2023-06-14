@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     flex-basis: 10%;
     display: flex;
     background-color: #f2f2f2;
@@ -13,7 +13,7 @@
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-  }
+  } */
 
   .homeLink {
     display: flex;
@@ -42,7 +42,7 @@
 
   }
 
-  #liOne {
+  /* #liOne {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,9 +50,9 @@
     width: 150px;
     border-radius: 10px;
     border: 1px solid grey;
-  }
+  } */
 
-  #liTwo {
+  /* #liTwo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,9 +60,9 @@
     width: 150px;
     border-radius: 10px;
     border: 1px solid grey;
-  }
+  } */
 
-  #liThree {
+  /* #liThree {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@
     color: #000;
     border: 1px solid grey;
     cursor: pointer;
-  }
+  } */
 
 
   .navbarList {
@@ -129,10 +129,10 @@
     color: #f2f2f2;
   }
 
-  .Icons {
+  /* .Icons {
     font-size: 24px;
   }
-  
+   */
   .LogoutIcon {
     font: 22px;
   }

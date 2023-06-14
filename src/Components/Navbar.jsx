@@ -9,8 +9,6 @@ import { CgProfile } from 'react-icons/cg';
 import { RiLogoutCircleRLine, RiLoginCircleLine } from 'react-icons/ri';
 import { VscSignIn } from 'react-icons/vsc';
 
-import styles from '../Styles/Components/Navbar.module.css';
-
 
 
 const Navbar = () => {
@@ -18,33 +16,29 @@ const Navbar = () => {
   const { user, logoutUser, email } = useContext(AuthContext);
 
   return (
-    <nav className={styles.navbar}>
-        <li className={styles.Home}>
-          <FcHome className={styles.Icons}/>
-          <NavLink to="/" className={styles.homeLink}> BID BUDDY </NavLink>
+    <nav className="flex basis-1/10 bg-gray-400 p-4 uppercase text-sm font-normal sticky top-0">
+
+        <li className="flex basis-3/5 justify-start items-center cursor-pointer">
+          <FcHome className="text-2xl"/>
+          <NavLink to="/" className="Navlinks text-white text-lg font-serif"> BID BUDDY </NavLink>
         </li>
 
-        {user && <div className={styles.navbarItems}>
-                    <li id={styles.liOne}>
-                      <NavLink to="/add-item" className={styles.navbarLink}> <IoAddCircleOutline className={styles.Icons}/> Add Item</NavLink>
-                    </li> 
-                    <li id={styles.liThree}> 
-                      <NavLink to="/my-product" className={styles.navbarLink}><CgProfile className={styles.Icons}/>My Product</NavLink>
-                      </li><li onClick={logoutUser} className={styles.logoutButton}> 
-                    <RiLogoutCircleRLine className={styles.Icons}/> Logout</li>
-                    <li className={styles.navbarLink} id={styles.li}>{email}</li>
+        {user && <div className="flex basis-2/5 justify-end items-center ml-2.5">
+                      <NavLink to="/add-item"  className="NavLinks ListClassOne mr-10"> <IoAddCircleOutline className="Icons"/> Add Item</NavLink>
+                      <NavLink to="/my-product" className="NavLinks ListClassOne"><CgProfile className="Icons"/>My Product</NavLink>
+
+                      <NavLink onClick={logoutUser} className="flex 
+                      h-10 w-40 text-nav justify-center items-center no-underline
+                      text-white font-normal cursor-pointer ml-20 mr-4 border border-white rounded-lg hover:bg-gray-700 hover:border-0"> 
+                    <RiLogoutCircleRLine className="Icons"/> Logout</NavLink>
+                    <NavLink className="ProfileLinks">{email}</NavLink>
                   </div> 
         }
 
-       {!user &&<div className={styles.navbarItems}>
+       {!user &&<div className="flex basis-2/5 justify-end items-center ml-4">
+                        <NavLink to="/login" className="ProfileLinks ListClassOne"><RiLoginCircleLine className="Icons"/>login</NavLink>
+                        <NavLink to="/signup" className="ProfileLinks ListClassOne ml-4"><VscSignIn className="Icons"/>Signup</NavLink>
 
-                      <li id={styles.liTwo}> 
-                        <NavLink to="/login" className={styles.navbarLink1}><RiLoginCircleLine className={styles.Icons}/>login</NavLink>
-                      </li>
-         
-                      <li id={styles.litwo}> 
-                        <NavLink to="/signup" className={styles.navbarLink2}><VscSignIn className={styles.Icons}/>Signup</NavLink>
-                      </li>
          
                 </div>
         }

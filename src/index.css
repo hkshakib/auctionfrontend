@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.ListClassOne {
+    @apply flex justify-center items-center h-10 w-40 border border-white hover:bg-gray-700 hover:border-0 hover:rounded-lg ;
+}
+.Icons {
+    @apply text-2xl mr-2;
+}
+
+.NavLinks {
+    @apply flex justify-center items-center no-underline font-normal text-white cursor-pointer ml-2.5;
+}
+
+.ProfileLinks {
+    @apply flex justify-center items-center no-underline font-bold ml-2 mr-6 text-white;
+}

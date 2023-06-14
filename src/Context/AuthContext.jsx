@@ -164,7 +164,7 @@ export const AuthProvider =({ children })=>{
             }
         }, Minutes)
         return ()=> clearInterval(interval)
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [authTokens, loading])
 
     return(
