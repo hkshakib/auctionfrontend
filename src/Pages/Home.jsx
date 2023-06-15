@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import styles from "../Styles/Pages/Home.module.css";
-
+import Card from "../Components/Card";
 
 const Home = () => {
 
@@ -30,44 +28,28 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleView = (param) => {
-    navigate(`/product-details/${param}`);
+      console.log("clicked!!");
+      navigate(`/product-details/${param}`);
   }
 
-
-  return (
-    <div className={styles.container}>
-      <h2>HERE YOU GO</h2>
-      {biddingProducts.length === 0 ? (
-        <p>No products available.</p>
-      ) : (
-        <div className={styles.productList}>
+  if(biddingProducts.length === 0){
+    return (
+      <h2 className="font-bold p-5 text-lg">NO PRODUCT FOUND</h2>
+    )
+  }
+  else{
+    return (
+      <div className="flex basis-9/10 flex-col m-auto p-1">
+        <div className="grid grid-cols-4 gap-10 justify-items-center items-center gap-x-10 gap-y-10 p-10 ">
           {biddingProducts.map((product) => (
-            
-            <div key={product.id} className={styles.productItem}>
-              <div className={styles.basicInfo}>
-                <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} />               
-                <div className={styles.productDetails}>
-                  <div className={styles.title}>{product.title}</div>
-                  <div className={styles.description}>{product.descriptions}</div>
-                </div>
-
-              </div>
-              <div className={styles.bidInfo}>
-                  <div className={styles.info}>
-                    <div className={styles.highestBid}>Current Bid: ${product.highest_bid}</div>
-                    <div className={styles.auctionEnd}>Ends At: {product.auction_end_date_time}</div>
-                  </div>
-                  <div className={styles.Button}>
-                    <button className={styles.viewBtn} onClick={() => handleView(product.id)}>View</button>
-                  </div>
-              </div>
-            </div>
-            
+            <Card key={product.id} product={product} handleView={handleView}/>
           ))}
         </div>
-      )}
-    </div>
-  );
-};
+          
+      </div>
+    );
+  };
+}
+  
 
 export default Home;

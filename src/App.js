@@ -11,7 +11,7 @@ import ProductDetails from './Pages/ProductDetails';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="flex flex-col bg-slate-300">
       <Router>
         <AuthProvider>
           <Navbar />

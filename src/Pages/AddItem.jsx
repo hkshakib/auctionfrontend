@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext";
 import styles from "../Styles/Pages/AddItem.module.css";
+import { IoAddCircleOutline } from 'react-icons/io5';
 
 const AddItem = () => {
   const { user, addItem } = useContext(AuthContext);
@@ -46,12 +47,12 @@ const AddItem = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>Add Your Item Here</div>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <div className="flex basis-1/1 flex-col justify-center items-center p-3 h-[100%] uppercase">
+      <div className="flex justify-center uppercase text-addItem">Add Your Item Here</div>
+      <form onSubmit={handleSubmit} className="flex justify-center items-center flex-col shadow-lg w-[36%]">
 
-        <div className={styles.formGroup}>
-          <label htmlFor="title">Title:</label>
+        <div className="FormGroup">
+          <label htmlFor="title" className="text-sm text-normal">Title</label>
           <input
             type="text"
             id="title"
@@ -59,24 +60,24 @@ const AddItem = () => {
             placeholder="Write your title here"
             value={title}
             onChange={handleTitleChange}
-            className={styles.input1}
+            className="InputClass "
           />
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="description">Description:</label>
+        <div className="FormGroup">
+          <label htmlFor="description" className="text-sm text-normal">Description</label>
           <textarea
             id="description"
             name="description"
             placeholder="Write your description here"
             value={description}
             onChange={handleDescriptionChange}
-            className={styles.textarea}
+            className="InputClass h-80"
           ></textarea>
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="photo">Photo:</label>
+        <div className="FormGroup">
+          <label htmlFor="photo" className="text-sm text-normal">Photo</label>
           <input
             type="file"
             id="photo"
@@ -84,12 +85,12 @@ const AddItem = () => {
             accept="image/*"
             placeholder="upload your product photo"
             onChange={handlePhotoChange}
-            className={styles.input2}
+            className="InputClass"
           />
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="minBidPrice">Minimum Bid Price:</label>
+        <div className="FormGroup">
+          <label htmlFor="minBidPrice" className="text-sm text-normal">Minimum Bid Price</label>
           <input
             type="number"
             id="minBidPrice"
@@ -97,25 +98,28 @@ const AddItem = () => {
             placeholder="input product minimum bid price"
             value={minBidPrice}
             onChange={handleMinBidPriceChange}
-            className={styles.input3}
+            className="InputClass"
           />
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="auctionEndDatetime">Auction End Date and Time:</label>
+        <div className="FormGroup">
+          <label htmlFor="auctionEndDatetime" className="text-sm text-normal">Auction End Date and Time</label>
           <input
             type="datetime-local"
             id="auctionEndDatetime"
             name="auctionEndDatetime"
             value={auctionEndDatetime}
             onChange={handleAuctionEndDatetimeChange}
-            className={styles.input4}
+            className="InputClass"
           />
         </div>
         
-        <button type="submit" className={styles.button}>
-          Add Item
-        </button>
+        <div className="flex justify-center items-center bg-white w-[95%] mb-3 h-16 rounded-lg text-lg hover:bg-black hover:text-white">
+          <IoAddCircleOutline className="text-lg mr-1 uppercase" />
+          <button type="submit" className="text-sm uppercase">
+             Add Item
+          </button>
+        </div>
 
       </form>
     </div>
