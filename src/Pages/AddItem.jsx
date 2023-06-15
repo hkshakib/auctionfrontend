@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext";
-import styles from "../Styles/Pages/AddItem.module.css";
 import { IoAddCircleOutline } from 'react-icons/io5';
 
 const AddItem = () => {
@@ -48,9 +47,9 @@ const AddItem = () => {
 
   return (
     <div className="flex basis-1/1 flex-col justify-center items-center p-3 h-[100%] uppercase">
-      <div className="flex justify-center uppercase text-addItem">Add Your Item Here</div>
+      
       <form onSubmit={handleSubmit} className="flex justify-center items-center flex-col shadow-lg w-[36%]">
-
+      <div className="flex justify-center uppercase text-addItem">Add Your Item Here</div>
         <div className="FormGroup">
           <label htmlFor="title" className="text-sm text-normal">Title</label>
           <input
@@ -110,7 +109,7 @@ const AddItem = () => {
             name="auctionEndDatetime"
             value={auctionEndDatetime}
             onChange={handleAuctionEndDatetimeChange}
-            className="InputClass"
+            className="InputClass mb-2"
           />
         </div>
         

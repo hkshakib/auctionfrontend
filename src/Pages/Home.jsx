@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "../Components/Card";
+import HomeCard from "../Components/HomeCard";
 
 const Home = () => {
 
@@ -42,7 +42,7 @@ const Home = () => {
       <div className="flex basis-9/10 flex-col m-auto p-1">
         <div className="grid grid-cols-4 gap-10 justify-items-center items-center gap-x-10 gap-y-10 p-10 ">
           {biddingProducts.map((product) => (
-            <Card key={product.id} product={product} handleView={handleView}/>
+            <HomeCard key={product.id} product={product} handleView={handleView}/>
           ))}
         </div>
           

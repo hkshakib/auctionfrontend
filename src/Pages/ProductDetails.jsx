@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import AuthContext from '../Context/AuthContext';
-import styles from "../Styles/Pages/ProductDetails.module.css";
+import DetailsCard from "../Components/DetailsCard";
+import BidCard from "../Components/BidCard";
 
 
 const ProductDetails = () => {
@@ -47,6 +48,7 @@ const ProductDetails = () => {
       console.log("Error fetching product details:", error);
     }
   };
+  
 
   const fetchBids = async () => {
     try {
@@ -93,75 +95,43 @@ const ProductDetails = () => {
   const handleBidPriceChange = (event) => {
     setBidPrice(parseInt(event.target.value));
   };
+  
 
+  if(product === null ) {
+    return(
+      <p>Loading...</p>
+    )
+  }
+  else{
+    return (
+      <div className="flex flex-col h-[92vh] p-8">
+        
 
-  return (
-    <div className={styles.wrapper}>
-      
-      {product ? (
-          <div className={styles.container}>
+            <div className="flex basis-4/5">
 
-            <div className={styles.productInformations}>
-                
-                <div className={styles.basicInfo}>
-                    <img src={`http://127.0.0.1:8000${product.photo}`} alt={product.title} className={styles.productImage} />
-                    <div className={styles.shortInfo}>
-                      <div className={styles.productTitle}>{product.title}</div>
-                      <div className={styles.productDescription}>{product.description}</div>
-                    </div>
-                </div>
-                <div className={styles.bidInfo}>
-                    
-                    <div className={styles.info}>
-                      <div className={styles.productPrice}>Highest Bid: ${product.highest_bid}</div>
-                      <div className={styles.productEndsAt}>Bid Ends At: {product.auction_end_date_time}</div>
-                      <div className={styles.productBidder}>Highest Bidder: {product.email}</div>
-                    </div>
-
-                    <div className={styles.bidSection}>
-                      <input
-                        type="number"
-                        value={bidPrice}
-                        onChange={handleBidPriceChange}
-                        className={styles.bidInput}
-                      />
-                      <button className={styles.bidBtn} onClick={handleBid}>BID</button>
-                    </div>
-
-                </div>
-
-            </div> 
-
-            {bids.length > 0 && (
-
-            <div className={styles.bidsTable}>
-                <div className={styles.tableTitle}>BID INFORMATIONS</div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Bidder</th>
-                      <th>Bidding Amount</th>
-                      <th>Bid created Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bids?.map((bid) => (
-                      <tr key={bid.id}>
-                        <td>{bid.email}</td>
-                        <td>{bid.amount}</td>
-                        <td>{formatDate(bid.created_at)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <DetailsCard product={product}  
+                handleBidPriceChange={handleBidPriceChange} 
+                handleBid={handleBid} 
+                bidPrice={bidPrice}
+                formatDate={formatDate}
+              /> 
+  
+              {bids.length > 0 && (
+  
+                <BidCard bids = {bids} formatDate={formatDate} email={email}/>
+  
+              )}
             </div>
 
-            )}
-          </div>
-      ) : (<p>Loading...</p> )}
+            <div className="flex flex-col basis-[10%] border m-2 justify-center items-center">
+              <span > WINNER WILL BE ANNOUNCED SOON </span>
+            </div>
+  
+      </div>
+    );
+  };  
+}
 
-    </div>
-  );
-};
 
+  
 export default ProductDetails;

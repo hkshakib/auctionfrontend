@@ -1,15 +1,15 @@
-.wrapper {
+/* .wrapper {
   display: flex;
   flex-basis: 100%;
   justify-content: center;
-}
+} */
 
-.container {
+/* .container {
     display: flex;
     flex-basis: 100%;
-  }
+  } */
 
-  .productInformations {
+  /* .productInformations {
     display: flex;
     flex-basis: 50%;
     flex-direction: column;
@@ -17,20 +17,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     grid-gap: 10px;
     padding: 50px;
-  }
+  } */
 
-  .basicInfo{
+  /* .basicInfo{
     display: flex;
     flex-basis: 60%;
-  }
+  } */
 
-  .shortInfo {
+  /* .shortInfo {
     display: flex;
     flex-basis: 40%;
     flex-direction: column;
-  }
+  } */
 
-  .title {
+  /* .title {
     display: flex;
     flex-basis: 20%;
     justify-content: center;
@@ -42,9 +42,9 @@
     flex-basis: 80%;
     margin-top: 100px;
     padding-right: 20px;
-  }
+  } */
 
-  .bidInfo {
+  /* .bidInfo {
     display: flex;
   }
 
@@ -53,7 +53,7 @@
     flex-basis: 60%;
     flex-direction: column;
     text-transform: uppercase;
-  }
+  } */
 
   .bidSection {
     display: flex;
@@ -82,22 +82,22 @@
   }
   
   
-  .productImage {
+  /* .productImage {
     width: 300px;
     height: 400px;
     object-fit: cover;
     margin-right: 20px;
-  }
+  } */
   
-  .productTitle {
+  /* .productTitle {
     font-size: 24px;
   }
-  
-  .productDescription {
+   */
+  /* .productDescription {
     margin-bottom: 20px;
-  }
+  } */
   
-  .productPrice {
+  /* .productPrice {
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -106,36 +106,37 @@
     margin-bottom: 10px;
     color: rgb(172, 48, 48);
   }
-  
-  .productBidder {
+   */
+  /* .productBidder {
     margin-bottom: 10px;
-  }
+  } */
 
-  
+/*   
   .bidBtn {
-    height: 50px;
+    height: 40px;
     width: 120px;
-    margin-left: 100px;
+    margin-left: 10px;
     cursor: pointer;
     background: #1F6E8C;
     color: #f9f9f9;
     border: none;
-  }
+  } */
 
-  .bidBtn:hover {
+  /* .bidBtn:hover {
     background: #f9f9f9;
     color: #000;
     border: 1px solid gray;
-  }
+  } */
 
   .bidsTable {
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
     margin: 20px 10px 0 10px ;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
   }
-  
+
   .tableTitle {
     display: flex;
     justify-content: center;
@@ -144,12 +145,12 @@
     padding: 10px;
   }
   
-  table {
+  /* table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 50px;
   }
-  
+   */
   th,
   td {
     padding: 8px;
@@ -157,13 +158,13 @@
     border-bottom: 1px solid #ccc;
   }
   
-  th {
+  /* th {
     font-weight: bold;
-  }
+  } */
   
-  tbody tr:nth-child(even) {
+  /* tbody tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
+  } */
   
   tbody tr:hover {
     background-color: #ddd;
