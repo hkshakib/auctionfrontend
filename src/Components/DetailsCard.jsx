@@ -1,6 +1,7 @@
 import React from 'react';
+import DeleteConfirmation from './DeleteConfirmation';
 
-function DetailsCard({product, handleBidPriceChange, handleBid, formatDate}) {
+function DetailsCard({product, handleBidPriceChange, handleBid, formatDate, email, user}) {
 
   return (
     <div className="flex basis-1/2 flex-col mt-5 p-4 border ml-1">
@@ -18,7 +19,8 @@ function DetailsCard({product, handleBidPriceChange, handleBid, formatDate}) {
             <div className="flex basis-3/5 flex-col uppercase border mt-16">
                 <div className="text-normal mb-2.5 mt-3">Highest Bid: ${product.highest_bid}</div>
                 <div className="mb-2.5 text-red-500">Bid Ends At: {formatDate(product.auction_end_date_time)}</div>
-                <div className="mb-2.5">Highest Bidder: {product.email}</div>
+                <div className="mb-2.5">Highest Bidder: {product.highest_bidder_email}</div>
+                <div className="mb-2.5">Owner: {product.email}</div>
             </div>
 
 
@@ -45,6 +47,10 @@ function DetailsCard({product, handleBidPriceChange, handleBid, formatDate}) {
                 </button>
             </div>
         </div>
+        {
+            email === product.email && <div className='flex justify-end'><DeleteConfirmation onDelete={() => console.log("clicked")} Val={"Product"} /></div>
+        }
+        
 
     </div>
   )

@@ -45,7 +45,7 @@ const BidCard = ({bids, formatDate, email}) => {
                             {
                                 email === bid.email? 
                                     <td >
-                                        <DeleteConfirmation onDelete={() => deleteBid(bid.id)} />
+                                        <DeleteConfirmation onDelete={() => deleteBid(bid.id)} Val={"Bid"} />
                                     </td>
                                     :<td  className="flex text-white justify-center items-center cursor-pointer h-8 mt-1 mr-1 rounded-sm"></td>
                             }

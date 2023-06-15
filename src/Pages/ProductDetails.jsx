@@ -114,6 +114,8 @@ const ProductDetails = () => {
                 handleBid={handleBid} 
                 bidPrice={bidPrice}
                 formatDate={formatDate}
+                email={email}
+                user={user}
               /> 
   
               {bids.length > 0 && (
