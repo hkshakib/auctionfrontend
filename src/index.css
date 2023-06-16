@@ -6,6 +6,7 @@
 .ListClassOne {
     @apply flex justify-center items-center h-10 w-40 border border-white hover:bg-gray-700 hover:border-0 hover:rounded-lg ;
 }
+
 .Icons {
     @apply text-2xl mr-2;
 }
@@ -21,10 +22,15 @@
 .CardItem {
     @apply  opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out;
 }
+
 .InputClass {
     @apply focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm
 }
 
 .FormGroup {
     @apply flex flex-col w-[100%] p-4;
+}
+
+.NavItems {
+    @apply flex h-10 w-32 justify-end items-center no-underline text-gray-500 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-0;
 }

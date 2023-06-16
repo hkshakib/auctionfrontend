@@ -10,24 +10,33 @@ import MyProduct from './Pages/MyProduct';
 import ProductDetails from './Pages/ProductDetails';
 
 const App = () => {
+
   return (
-    <div className="flex flex-col bg-slate-300">
-      <Router>
-        <AuthProvider>
+    
+    <Router>
+      <AuthProvider>
+
+        <div className="flex flex-col bg-slate-200">
           <Navbar />
-          <Routes>
-            <Route element={<PrivateRoute/>}>
-              <Route path='/' element={<Home/>} />
-              <Route path='/add-Item' element={<AddItem/>} />
-              <Route path='/my-product' element={<MyProduct/>} />
-              <Route path="/product-details/:pk" element={<ProductDetails/>} />
-            </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </AuthProvider>
-      </Router>
-    </div>
+          <div className='flex-grow z-5'>
+            <div className='overflow-y-auto overflow-x-auto h-screen'>
+              <Routes>
+                <Route element={<PrivateRoute/>}>
+                  <Route path='/' element={<Home/>} />
+                  <Route path='/add-item' element={<AddItem/>} />
+                  <Route path='/my-product' element={<MyProduct/>} />
+                  <Route path="/product-details/:pk" element={<ProductDetails/>} />
+                </Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+
+      </AuthProvider>
+    </Router>
+    
   );
 }
 

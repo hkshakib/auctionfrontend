@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Card = ({ product, handleView }) => {
+const Card = ({ product, handleView, Name }) => {
 
 
     return (
@@ -13,7 +13,7 @@ const Card = ({ product, handleView }) => {
                 <div className='CardItem absolute top-0 left-0 w-full h-full backdrop-filter backdrop-blur-lg'>
                     
                     <div className="CardItem absolute bottom-0 right-0 justifiy-center items-center h-auto px-4 py-2 text-white">
-                        <button onClick={() => handleView(product.id)} className="px-4 py-2 bg-blue-500 text-white rounded w-32 hover:bg-white hover:text-black">BID</button>
+                        <button onClick={() => handleView(product.id)} className="px-4 py-2 bg-blue-500 text-white rounded w-32 hover:bg-white hover:text-black">{Name}</button>
                     </div>
 
                     <div className="CardItem top-0 left-0 w-full h-full">

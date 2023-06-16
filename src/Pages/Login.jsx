@@ -8,7 +8,7 @@ const Login = () => {
   let { loginUser } = useContext(AuthContext); 
 
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col justify-center items-center mt-100">
       <h2>Login</h2>
       <form onSubmit={loginUser} className={styles.form}>
         <div className={styles.formGroup}>

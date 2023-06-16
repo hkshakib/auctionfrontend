@@ -1,12 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../Context/AuthContext";
-import styles from "../Styles/Pages/MyProducts.module.css";
+import HomeCard from "../Components/HomeCard";
 
 
 const MyProducts = () => {
 
   const { user, authTokens } = useContext(AuthContext);
   const [userProducts, setUserProducts] = useState([]);
+  const navigate = useNavigate();
+
+  const handleView = (param) => {
+      console.log("clicked!!");
+      navigate(`/product-details/${param}`);
+  }
 
   useEffect(() => {
     fetchUserProducts();
@@ -40,23 +47,27 @@ const MyProducts = () => {
     }
   };
 
-  return (
-    <div className={styles.container}>
-      <h2>My Products</h2>
-      {userProducts.length === 0 ? (
-        <p>No products available.</p>
-      ) : (
-        <div className={styles.productList}>
-          {userProducts.map((product) => (
-            <div key={product.id} className={styles.productItem}>
-              <h3>{product.title}</h3>
-              <p>{product.description}</p>
-            </div>
-          ))}
+  if(userProducts.length === 0){
+    return (
+      <p>No products available.</p>
+    )
+  }
+
+  else{
+    return (
+      <div className="flex flex-col basis-9/10">
+
+        <h2>My Products</h2>
+        <div className="flex flex-wrap gap-10 mt-20 justify-center items-center gap-x-10 gap-y-10 p-10">
+            {userProducts.map((product) => (
+              <HomeCard product={product} handleView={handleView} Name={"VIEW"}/>
+            ))}
         </div>
-      )}
-    </div>
-  );
-};
+
+      </div>
+    );
+  };
+  }
+  
 
 export default MyProducts;

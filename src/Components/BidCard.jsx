@@ -25,12 +25,12 @@ const BidCard = ({bids, formatDate, email}) => {
       };
 
   return (
-        <div className="flex flex-col basis-1/2 w-[100%] mt-1 mr-2.5 ml-2.5 border-white p-2">
+        <div className="flex flex-col basis-1/2 w-[100%] mt-1 mr-2 ml-2 border-white p-2">
                     <div className="flex justify-center text-lg">BID INFORMATIONS</div>
-                    <table className="w-[100%] h-[100%] border-collapse mt-12">
+                    <table className="w-[100%] h-[100%] border-collapse mt-3">
                       <thead>
                         <tr className="uppercase">
-                          <th className="font-bold">Bidder</th>
+                          <th className="font-bold ml-10">Bidder</th>
                           <th className="font-bold">Bidding Amount</th>
                           <th className="font-bold">Bid Placed On</th>
                         </tr>

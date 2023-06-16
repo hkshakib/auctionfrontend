@@ -40,9 +40,9 @@ const Home = () => {
   else{
     return (
       <div className="flex basis-9/10 flex-col m-auto p-1">
-        <div className="grid grid-cols-4 gap-10 justify-items-center items-center gap-x-10 gap-y-10 p-10 ">
+        <div className="flex flex-wrap mt-20 gap-10 justify-center items-center p-10 ">
           {biddingProducts.map((product) => (
-            <HomeCard key={product.id} product={product} handleView={handleView}/>
+            <HomeCard key={product.id} product={product} handleView={handleView} Name={"BID"}/>
           ))}
         </div>
           
