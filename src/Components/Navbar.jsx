@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 import AuthContext from '../Context/AuthContext';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
+import { CgProfile } from 'react-icons/cg';
+
 
 
 const Navbar = () => {
@@ -18,7 +20,7 @@ const Navbar = () => {
 
         <div className="flex justify-start items-center cursor-pointer">
           <div class="flex items-center">
-                <NavLink to="/" class="cursor-pointer">
+                <NavLink to="/" className="cursor-pointer">
                     <h3 class="text-2xl font-medium text-blue-500">
                         <img class="h-10 object-cover"src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg" alt="BigBuddy Logo"/>
                     </h3>
@@ -47,26 +49,29 @@ const Navbar = () => {
           </div>
           }
 
+          {
+            user && <NavLink to="/my-product" className="flex h-10 w-44 uppercase text-[16px] justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer border border-white rounded-lg  hover:border-1">
+              <CgProfile className='flex mr-1'/>{username}</NavLink>
+          }
+
+
           {user && <NavLink onClick={logoutUser} className="flex h-10 w-40 text-nav justify-center items-center no-underline text-gray-500 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1"> 
                     <RiLogoutCircleRLine className="Icons"/> Logout</NavLink>
           }
-          {
-            user && <NavLink className="flex h-10 w-40 text-nav justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer border border-white rounded-lg  hover:border-1">{username}</NavLink>
-          }
-
+          
        {!user &&<div className="flex justify-end items-center space-x-5">
-                    <NavLink to="/login" class="flex h-10 w-40 text-nav justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
+                    <NavLink to="/login" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-black hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
 
-                      <svg class="fill-current h-5 w-5 mr-2 mt-0.5"  version="1.1" width="24" height="24"
+                      <svg className="fill-current h-5 w-5 mr-2 mt-0.5"  version="1.1" width="24" height="24"
                           viewBox="0 0 24 24">
                           <path d="M10,17V14H3V10H10V7L15,12L10,17M10,2H19A2,2 0 0,1 21,4V20A2,2 0 0,1 19,22H10A2,2 0 0,1 8,20V18H10V20H19V4H10V6H8V4A2,2 0 0,1 10,2Z" />
                       </svg>
 
                     Login
                 </NavLink>
-                <NavLink class="flex h-10 w-40 text-nav justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
+                <NavLink to="/signup" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
 
-                    <svg class="fill-current h-5 w-5 mr-2 mt-0.5"
+                    <svg className="fill-current h-5 w-5 mr-2 mt-0.5"
                               version="1.1" width="24" height="24"
                               viewBox="0 0 24 24">
                               <path

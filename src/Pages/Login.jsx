@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import AuthContext from '../Context/AuthContext';
 import { NavLink } from 'react-router-dom';
+import AuthContext from '../Context/AuthContext';
+
 
 import {BiShow, BiHide} from 'react-icons/bi';
 

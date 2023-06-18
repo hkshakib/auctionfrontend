@@ -46,7 +46,7 @@ const AddItem = () => {
   };
 
   return (
-    <div className="flex basis-1/1 flex-col justify-center items-center p-3 h-[100%] uppercase">
+    <div className="flex basis-1/1 flex-col justify-center items-center p-3 uppercase mt-[100px]">
       
       <form onSubmit={handleSubmit} className="flex justify-center items-center flex-col shadow-lg w-[36%]">
       <div className="flex justify-center uppercase text-addItem">Add Your Item Here</div>
@@ -71,7 +71,7 @@ const AddItem = () => {
             placeholder="Write your description here"
             value={description}
             onChange={handleDescriptionChange}
-            className="InputClass h-80"
+            className="InputClass h-72"
           ></textarea>
         </div>
 
@@ -113,7 +113,7 @@ const AddItem = () => {
           />
         </div>
         
-        <div className="flex justify-center items-center bg-white w-[95%] mb-3 h-16 rounded-lg text-lg hover:bg-black hover:text-white">
+        <div className="flex justify-center items-center bg-gray-500 text-white w-[95%] mb-3 h-16 rounded-lg text-lg hover:bg-white hover:text-black">
           <IoAddCircleOutline className="text-lg mr-1 uppercase" />
           <button type="submit" className="text-sm uppercase">
              Add Item

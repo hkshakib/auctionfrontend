@@ -20,13 +20,17 @@ export const AuthProvider =({ children })=>{
 
     let loginUser = async (e )=> {
         e.preventDefault();
+        let payload = {
+            email: e.target.email.value,
+            password: e.target.password.value
+        };
 
         let response = await fetch(`http://127.0.0.1:8000/auth/api/token/`, {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({'email':e.target.email.value, 'password':e.target.password.value})
+            body:JSON.stringify(payload)
         })
 
         let data = await response.json();
@@ -34,6 +38,7 @@ export const AuthProvider =({ children })=>{
         if(response.status === 200){
             setAuthTokens(data);
             setUser(jwt_decode(data.access));
+            localStorage.clear();
             localStorage.setItem('authTokens', JSON.stringify(data));
             setEmail(e.target.email.value);
             localStorage.setItem("email", e.target.email.value);
@@ -64,6 +69,9 @@ export const AuthProvider =({ children })=>{
         if(response.status === 201){
             setAuthTokens(data);
             setUser(jwt_decode(data.access));
+            localStorage.clear();
+            setEmail(e.target.email.value);
+            localStorage.setItem("email", e.target.email.value);
             localStorage.setItem('authTokens', JSON.stringify(data));
             naviagte('/');
         }else{

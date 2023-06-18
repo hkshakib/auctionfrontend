@@ -55,9 +55,9 @@ const MyProducts = () => {
 
   else{
     return (
-      <div className="flex flex-col mt-32">
+      <div className="flex flex-col justify-center items-center mt-32">
 
-        <h2 className="uppercase"> Remaining Bidding Products </h2>
+        <h2 className="">You Have Remaining { userProducts.length } Products </h2>
         <div className="flex flex-wrap gap-10 mt-1 justify-center items-center gap-x-10 gap-y-10 p-10">
             {userProducts.map((product) => (
               <HomeCard product={product} handleView={handleView} Name={"VIEW"}/>
