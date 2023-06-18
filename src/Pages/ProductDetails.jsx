@@ -104,10 +104,10 @@ const ProductDetails = () => {
   }
   else{
     return (
-      <div className="flex flex-col h-[92vh] p-8">
+      <div className="flex flex-col p-4 mt-20">
         
 
-            <div className="flex basis-4/5">
+            <div className="flex basis-1/2">
 
               <DetailsCard product={product}  
                 handleBidPriceChange={handleBidPriceChange} 
@@ -119,9 +119,9 @@ const ProductDetails = () => {
               /> 
   
               {bids.length > 0 && (
-  
-                <BidCard bids = {bids} formatDate={formatDate} email={email}/>
-  
+                <div className="flex basis-1/2">
+                  <BidCard  bids = {bids} formatDate={formatDate} email={email}/>
+                </div>
               )}
             </div>
 

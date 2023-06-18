@@ -1,4 +1,4 @@
-.container {
+/* .container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -10,27 +10,25 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
-  }
+  } */
   
-  .form {
+  /* .form {
     display: flex;
     flex-direction: column;
   }
+   */
+
   
-  .formGroup {
-    margin-bottom: 15px;
-  }
-  
-  .form label {
+  /* .form label {
     font-weight: bold;
   }
-  
-  .input {
+   */
+  /* .input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
+  } */
+/*   
   .button {
     padding: 10px;
     background-color: #4caf50;
@@ -43,4 +41,4 @@
   .button:hover {
     background-color: #45a049;
   }
-  
+   */
