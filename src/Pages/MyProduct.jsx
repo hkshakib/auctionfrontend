@@ -33,7 +33,7 @@ const MyProducts = () => {
       
       if (response.ok) {
         const data = await response.json();
-        console.log("API response:", data); 
+        
         if (Array.isArray(data.products)) {
           setUserProducts(data.products);
         } else {

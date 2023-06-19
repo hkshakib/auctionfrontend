@@ -123,13 +123,10 @@ export const AuthProvider =({ children })=>{
           formData.append('min_bid_price', newItem.min_bid_price);
           formData.append('auction_end_date_time', newItem.auction_end_date_time);
           formData.append('bidder', newItem.bidder);
-
-        //   console.log(formData);
       
           const response = await fetch("http://127.0.0.1:8000/auction/api/products/", {
             method: "POST",
             headers: {
-            //   'Content-Type':'multipart/form-data',
               Authorization: `Bearer ${authTokens?.access}`
             },
             body: formData

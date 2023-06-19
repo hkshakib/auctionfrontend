@@ -1,30 +1,12 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeCard from "../Components/HomeCard";
+import useFetch from "../customHooks/useFetch";
 
 const Home = () => {
 
-  const [biddingProducts, setBiddingProducts] = useState([]);
-
-  useEffect(() => {
-    fetchBiddingProducts();
-  }, []);
-
-  const fetchBiddingProducts = async (e) => {
-    
-    try {
-      const response = await fetch("http://127.0.0.1:8000/auction/api/products/");
-      if (response.ok) {
-        const data = await response.json();
-        setBiddingProducts(data);
-      } else {
-        console.log("Error fetching bidding products");
-      }
-    } catch (error) {
-      console.log("Error fetching bidding products:", error);
-    }
-  };
-
+  const {data:biddingProducts}= useFetch("http://127.0.0.1:8000/auction/api/products/");
+  
   const navigate = useNavigate();
 
   const handleView = (param) => {
