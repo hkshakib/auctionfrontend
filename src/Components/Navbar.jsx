@@ -55,12 +55,12 @@ const Navbar = () => {
           }
 
 
-          {user && <NavLink onClick={logoutUser} className="flex h-10 w-40 text-nav justify-center items-center no-underline text-gray-500 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1"> 
+          {user && <NavLink onClick={logoutUser} className="flex h-10 w-32 text-nav justify-center items-center no-underline text-white bg-red-400 hover:text-black hover:bg-white  cursor-pointer  border border-white rounded-md  hover:border-1"> 
                     <RiLogoutCircleRLine className="Icons"/> Logout</NavLink>
           }
           
        {!user &&<div className="flex justify-end items-center space-x-5">
-                    <NavLink to="/login" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-black hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
+                    <NavLink to="/login" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-white bg-blue-900 hover:text-black hover:bg-white  cursor-pointer  border border-white rounded-lg  hover:border-1">
 
                       <svg className="fill-current h-5 w-5 mr-2 mt-0.5"  version="1.1" width="24" height="24"
                           viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ const Navbar = () => {
 
                     Login
                 </NavLink>
-                <NavLink to="/signup" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer  border border-white rounded-lg  hover:border-1">
+                <NavLink to="/signup" className="flex h-10 w-44 text-nav justify-center items-center no-underline text-white bg-slate-900 hover:text-black hover:bg-white  cursor-pointer  border border-white rounded-lg  hover:border-1">
 
                     <svg className="fill-current h-5 w-5 mr-2 mt-0.5"
                               version="1.1" width="24" height="24"

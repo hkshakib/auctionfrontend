@@ -57,7 +57,7 @@ const Login = () => {
         </form>
         <div>
           <span className='text-[13px] mr-2'>don't have an account? </span>
-          <NavLink to="/signup" className='text-[13px] text-blue-700'>signup</NavLink>
+          <NavLink to="/signup" className='text-[13px] text-blue-700'>Signup</NavLink>
         </div>
       </div>
     </div>
