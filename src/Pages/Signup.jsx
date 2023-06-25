@@ -31,6 +31,24 @@ const Signup = () => {
         <div className='flex flex-col justify-center items-center shadow-lg mr-0 h-[600px] w-[600px] bg-blue-200 rounded-lg'>
         <h2 className='uppercase font-semibold font-serif mb-1'>Sign Up</h2>
           <form onSubmit={SignupUser} className="flex flex-col justify-center">
+          <label htmlFor="name" className='text-[13px] font-normal uppercase'>First Name</label>
+            <div className="mb-[30px]">
+              <input
+                type="first_name"
+                name="first_name"
+                placeholder='Enter Your First Name'
+                className="p-[10px] rounded-lg w-400"
+              />
+            </div>
+            <label htmlFor="name" className='text-[13px] font-normal uppercase'>Last Name</label>
+            <div className="mb-[30px]">
+              <input
+                type="last_name"
+                name="last_name"
+                placeholder='Enter Your Last Name'
+                className="p-[10px] rounded-lg w-400"
+              />
+            </div>
             <label htmlFor="email" className='text-[13px] font-normal uppercase'>Email</label>
             <div className="mb-[30px]">
               <input

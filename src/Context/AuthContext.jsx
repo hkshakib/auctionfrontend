@@ -52,6 +52,8 @@ export const AuthProvider =({ children })=>{
     let SignupUser = async (e )=> {
         e.preventDefault();
         let payload = {
+            first_name: e.target.first_name.value,
+            last_name: e.target.last_name.value,
             email: e.target.email.value,
             password: e.target.password.value
         };
