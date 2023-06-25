@@ -50,7 +50,7 @@ const Navbar = () => {
           }
 
           {
-            user && <NavLink to="/my-product" className="flex h-10 w-44 uppercase text-[16px] justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer border border-white rounded-lg  hover:border-1">
+            user && <NavLink to="/my-profile" className="flex h-10 w-44 uppercase text-[16px] justify-center items-center no-underline text-gray-600 hover:text-blue-900  cursor-pointer border border-white rounded-lg  hover:border-1">
               <CgProfile className='flex mr-1'/>{username}</NavLink>
           }
 

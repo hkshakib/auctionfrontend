@@ -8,6 +8,7 @@ import PrivateRoute from './Layout/PrivateRoute';
 import AddItem from './Pages/AddItem';
 import MyProduct from './Pages/MyProduct';
 import ProductDetails from './Pages/ProductDetails';
+import Profile from './Pages/Profile';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
                   <Route path='/' element={<Home/>} />
                   <Route path='/add-item' element={<AddItem/>} />
                   <Route path='/my-product' element={<MyProduct/>} />
+                  <Route path='/my-profile' element={<Profile/>} />
                   <Route path="/product-details/:pk" element={<ProductDetails/>} />
                 </Route>
                 <Route path="/login" element={<Login />} />
