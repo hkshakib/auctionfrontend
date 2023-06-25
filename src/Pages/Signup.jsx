@@ -11,14 +11,39 @@ const Signup = () => {
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState('');
+  
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const [passwordMatchError, setPasswordMatchError] = useState(false);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
+  };
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  }
+
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    if(password !== confirmPassword){
+      setPasswordMatchError(true);
+      return;
+    }
+
+    SignupUser();
+  }
 
   return (
     <div className='flex justify-center items-center bg-white'>
@@ -26,11 +51,11 @@ const Signup = () => {
         <img src={Photo} alt="" className="object-cover h-[100vh]" />
       </div>
       
-      <div className="flex flex-col flex-[50%] justify-center items-center mr-0">
+      <div className="flex flex-col flex-[50%] justify-center items-center mr-0 mt-16">
       
-        <div className='flex flex-col justify-center items-center shadow-lg mr-0 h-[600px] w-[600px] bg-blue-200 rounded-lg'>
+        <div className='flex flex-col justify-center items-center shadow-lg mr-0 h-[800px] w-[600px] bg-blue-200 rounded-lg'>
         <h2 className='uppercase font-semibold font-serif mb-1'>Sign Up</h2>
-          <form onSubmit={SignupUser} className="flex flex-col justify-center">
+          <form onSubmit={handleSignUp} className="flex flex-col justify-center">
           <label htmlFor="name" className='text-[13px] font-normal uppercase'>First Name</label>
             <div className="mb-[30px]">
               <input
@@ -76,10 +101,33 @@ const Signup = () => {
                 {passwordVisible ? <BiHide/> : <BiShow/>}
               </button>
             </div>
+            <label htmlFor="confirm_password" className='text-[13px] font-normal uppercase'>confirm Password</label>
+            <div className="mb-[50px] relative">
+              <input
+                type={confirmPasswordVisible ? 'text' : 'password'}
+                name="confirm_password"
+                placeholder='Confirm Your Password'
+                className="p-[10px] rounded-lg w-400"
+                value={confirmPassword}
+                onChange={handleConfirmPasswordChange}
+              />
+              <button
+                type='button'
+                className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                onClick={toggleConfirmPasswordVisibility}
+              >
+                {confirmPasswordVisible ? <BiHide/> : <BiShow/>}
+              </button>
+              
+            </div>
+            {passwordMatchError && (
+              <span className="text-red-500">Passwords do not match. Please try again.</span>
+             )}
             <button type="submit" className="p-[10px] bg-slate-900 text-white rounded-lg
                                             cursor-pointer hover:bg-white hover:text-slate-900">
               Sign Up
             </button>
+
           </form>
           <div>
             <span className='text-[13px] mr-2'>Already Have Account? </span>
